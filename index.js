@@ -12,7 +12,7 @@ class _3sqrt7_Rpp {
         this.playButton.innerText = "暂停";
         this.playButton.addEventListener("click", () => {
             if (this.isPlaying) {
-                this.pause();
+                this.stop();
                 this.playButton.innerText = "播放";
                 this.isPlaying = false;
             }
@@ -42,6 +42,7 @@ class _3sqrt7_Rpp {
         this.element.appendChild(this.progressBar);
 
         element.children[0].style.opacity = "1";
+        element.children[0].style.display = "block";
         this.play();
     }
     element;
@@ -65,10 +66,10 @@ class _3sqrt7_Rpp {
         this.element.children[this.getPrevious()].style.opacity = "0";
 
         setTimeout(() => {
-            this.element.children[this.getPrevious()].hidden = true;
+            this.element.children[this.getPrevious()].style.display = "none";
         }, 230);
         setTimeout(() => {
-            this.element.children[this.num].hidden = false;
+            this.element.children[this.num].style.display = "block";
         }, 240);
         setTimeout(() => {
             this.element.children[this.num].style.opacity = "1";
@@ -93,7 +94,7 @@ class _3sqrt7_Rpp {
             this.switchTo(this.getNext());
         }
     };
-    pause() {
+    stop() {
         clearTimeout(this.timer);
     };
 }
