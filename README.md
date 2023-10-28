@@ -35,21 +35,21 @@
 
 ```html
 <script lang="ts">
-    import _3sqrt7_Rpp from "@/your/path/3sqrt7-rpp";
-    export default {
-        data() {
-            return {
-                rpp: null
-            };
-        },
-        mounted() {
-            this.rpp = new _3sqrt7_Rpp(document.getElementById("rpp"));
-        }
+import _3sqrt7_Rpp from "@/your/path/3sqrt7-rpp";
+export default {
+    data() {
+        return {
+            rpp: null
+        };
+    },
+    mounted() {
+        this.rpp = new _3sqrt7_Rpp(document.getElementById("rpp"));
     }
+}
 </script>
 
 <style>
-    @import url("@/your/path/3sqrt7-rpp/style.css");
+@import url("@/your/path/3sqrt7-rpp/style.css");
 </style>
 ```
 
@@ -57,7 +57,7 @@
 
 ```html
 <script type="module">
-    import _3sqrt7_Rpp from "./your/path/3sqrt7-rpp/index.js";
-    let rpp = new _3sqrt7_Rpp(document.getElementById("rpp"));
+import _3sqrt7_Rpp from "./your/path/3sqrt7-rpp/index.js";
+let rpp = new _3sqrt7_Rpp(document.getElementById("rpp"));
 </script>
 ```
