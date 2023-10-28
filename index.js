@@ -60,27 +60,26 @@ class _3sqrt7_Rpp {
     getPrevious = () => (this.num == 0) ? this.screensNum - 1 : this.num - 1;
 
     switchTo(targetNum) {
-        this.num = targetNum;
-        this.controller.children[this.getPrevious() + 1].style.background = "transparent";
-        this.controller.children[this.num + 1].style.background = "#1e9fff";
-        this.element.children[this.getPrevious()].style.opacity = "0";
+        this.element.children[this.num].style.opacity = "0";
+        this.controller.children[this.num + 1].style.background = "transparent";
+        this.controller.children[targetNum + 1].style.background = "#1e9fff";
 
         setTimeout(() => {
-            this.element.children[this.getPrevious()].style.display = "none";
+            this.element.children[this.num].style.display = "none";
+            this.element.children[targetNum].style.display = "block";
         }, 230);
         setTimeout(() => {
-            this.element.children[this.num].style.display = "block";
-        }, 240);
-        setTimeout(() => {
-            this.element.children[this.num].style.opacity = "1";
+            this.element.children[targetNum].style.opacity = "1";
         }, 260);
-        clearTimeout(this.timer);
 
+        clearTimeout(this.timer);
         if (this.isPlaying) {
             this.progressBar.style.width = "0";
             this.progress = 0;
             this.play();
         }
+
+        this.num = targetNum;
     };
     play() {
         this.progress += 0.08;
