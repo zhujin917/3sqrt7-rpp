@@ -11,6 +11,7 @@
     <div class="rpp-screen">
         <div class="rpp-left">
             <h1>Title 1</h1>
+            <h3>Text 1</h3>
             <a href="#">Link 1</a>
         </div>
         <div class="rpp-right">
@@ -19,7 +20,8 @@
     </div>
     <div class="rpp-screen">
         <div class="rpp-left">
-            <h1>Title 2</h1>
+            <h2>Title 2</h2>
+            <h1>Text 2</h1>
             <a href="#">Link 2</a>
         </div>
         <div class="rpp-right">
@@ -29,7 +31,7 @@
 </div>
 ```
 
-### JS
+### JS & CSS
 
 #### Vue
 
@@ -60,4 +62,6 @@ export default {
 import _3sqrt7_Rpp from "./your/path/3sqrt7-rpp/index.js";
 let rpp = new _3sqrt7_Rpp(document.getElementById("rpp"));
 </script>
+
+<link rel="stylesheet" href="./your/path/3sqrt7-rpp/style.css">
 ```
