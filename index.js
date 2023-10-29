@@ -53,7 +53,7 @@ class _3sqrt7_Rpp {
 
     num = 0;
     progress = 0;
-    timer = null;
+    animationHandle = null;
     isPlaying = true;
 
     getNext = () => (this.num == this.screensNum - 1) ? 0 : this.num + 1;
@@ -72,7 +72,7 @@ class _3sqrt7_Rpp {
             this.element.children[targetNum].style.opacity = "1";
         }, 260);
 
-        clearTimeout(this.timer);
+        cancelAnimationFrame(this.animationHandle);
         if (this.isPlaying) {
             this.progressBar.style.width = "0";
             this.progress = 0;
@@ -82,19 +82,19 @@ class _3sqrt7_Rpp {
         this.num = targetNum;
     };
     play() {
-        this.progress += 0.08;
+        this.progress += 0.25;
         this.progressBar.style.width = `calc(${this.progress}% - 16px)`;
         if (this.progress < 100) {
-            this.timer = setTimeout(() => {
+            this.animationHandle = requestAnimationFrame(() => {
                 this.play();
-            }, 1);
+            });
         }
         else {
             this.switchTo(this.getNext());
         }
     };
     stop() {
-        clearTimeout(this.timer);
+        cancelAnimationFrame(this.animationHandle);
     };
 }
 
